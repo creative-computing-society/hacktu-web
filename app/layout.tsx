@@ -13,7 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-[CabinetGrotesk-Variable] antialiased`}>
+      <body className={`font-[CabinetGrotesk-Variable] antialiased`} style={{
+        backgroundColor: "oklch(0.9427 0.0268 242.57)",
+        backgroundImage: "linear-gradient(90deg, rgba(128, 128, 128, 0.2) 1px, rgba(0, 0, 0, 0) 0px), linear-gradient(rgba(128, 128, 128, 0.2) 1px, rgba(0, 0, 0, 0) 0px)",
+      }}>
         {children}
       </body>
     </html>

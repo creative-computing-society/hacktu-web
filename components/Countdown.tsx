@@ -9,6 +9,7 @@ import {
 import { Rows2 as Seperator } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { cn } from '@/lib/utils';
+import { Button } from './ui/button';
 
 function getRemainingTime(endDateStr: string) {
   const today = new Date();
@@ -44,12 +45,12 @@ function getRemainingTime(endDateStr: string) {
 }
 
 function Box({ label, value, className }: { label: string, value: string, className?: string }) {
-  return <Card className={cn("p-4 flex flex-col text-center", className)}>
+  return <Button className={cn("p-4 flex flex-col text-center h-auto bg-transparent", className)}>
     <CardTitle>{label}</CardTitle>
     <CardContent className="text-4xl font-[Nippo-Variable]">
       {value}
     </CardContent>
-  </Card>
+  </Button>
 }
 
 function leftPad(

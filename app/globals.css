@@ -74,9 +74,11 @@
     --main-foreground: oklch(0% 0 0);
     --main: oklch(67.47% 0.1726 259.49);
     --border: oklch(0.922 0 0);
+    --borderblack: var(--main-foreground);
     --ring: oklch(0.708 0 0);
     --overlay: oklch(0% 0 0 / 0.8);
     --shadow: 4px 4px 0px 0px var(--border);
+    --shadowblack: 4px 4px 0px 0px var(--borderblack);
     --chart-1: oklch(0.646 0.222 41.116);
     --chart-2: oklch(0.6 0.118 184.704);
     --chart-3: oklch(0.398 0.07 227.392);
