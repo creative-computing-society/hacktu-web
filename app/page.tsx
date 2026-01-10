@@ -3,17 +3,14 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Countdown from "@/components/Countdown";
-import { HACKATHON_DATE, HACKATHON_DATE_FMT, HACKATHON_END_DATE, HACKATHON_VERSION, REGISTERATION_DEADLINE, TIMELINE } from "./config";
+import { FOOTER_LINKS, HACKATHON_DATE, HACKATHON_DATE_FMT, HACKATHON_END_DATE, HACKATHON_VERSION, NAVBAR, REGISTERATION_DEADLINE, SOCIALS, TIMELINE } from "./config";
 import ApplyWithDevfolio from "@/components/ApplyWithDevfolio";
 import { useCountdown } from "./utils";
 import { Calendar } from "@/components/ui/calendar";
 import { useState } from "react";
-import { DateRange } from "react-day-picker"
 import { Button } from "@/components/ui/button";
-
-function navbarItem(name: string, link: string) {
-  return { name, link }
-}
+import Link from "next/link";
+import { Instagram, Linkedin, Mail, MessageCircle } from "lucide-react";
 
 function Hero() {
   const { isPassed, ...countdown } = useCountdown(REGISTERATION_DEADLINE);
@@ -167,15 +164,79 @@ function Timeline() {
   )
 }
 
+function Sponsor() {
+  return (
+    <div className="flex flex-col items-center">
+      <div className="text-8xl font-[Nippo-Variable] mb-16">Sponsor</div>
+      <div className="flex w-[100vw] justify-evenly text-center">
+        <div className="flex flex-col gap-2">
+          <div className="font-[Nippo-Variable] text-6xl">100+</div>
+          <div className="text-4xl">Projects</div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="font-[Nippo-Variable] text-6xl">500+</div>
+          <div className="text-4xl">Hackers</div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="font-[Nippo-Variable] text-6xl">5 Lakhs+</div>
+          <div className="text-4xl">Prizes</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function FAQs() {
+  return (
+    <div className="flex flex-col items-center">
+      <div className="text-8xl font-[Nippo-Variable] mb-16">FAQs</div>
+      <div className="flex w-[100vw] justify-evenly text-center">
+        <div className="flex flex-col gap-2">
+          <div className="font-[Nippo-Variable] text-6xl">100+</div>
+          <div className="text-4xl">Projects</div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="font-[Nippo-Variable] text-6xl">500+</div>
+          <div className="text-4xl">Hackers</div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="font-[Nippo-Variable] text-6xl">5 Lakhs+</div>
+          <div className="text-4xl">Prizes</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Footer() {
+  return (
+    <footer className="bg-main h-[60vh] rounded-t-[100%] flex items-center justify-center">
+      <div className="flex flex-col gap-4 w-screen items-center">
+        <div className="flex gap-4 font-[Nippo-Variable]">
+          <Link href={FOOTER_LINKS.about}>About CCS</Link>
+          <Link href={FOOTER_LINKS.privacy}>Privacy Policy</Link>
+          <Link href={FOOTER_LINKS.codeofcontact}>Code of Contact</Link>
+          <Link href={FOOTER_LINKS.termsandconditions}>Terms & Conditions</Link>
+        </div>
+        <div className="flex gap-4">
+          <Link href={SOCIALS.mail}><Mail /></Link>
+          <Link href={SOCIALS.instagram}><Instagram /></Link>
+          <Link href={SOCIALS.linkedin}><Linkedin /></Link>
+          <Link href={SOCIALS.whatsapp}><MessageCircle /></Link>
+          <Link href={SOCIALS.discord}><Image src="/discord.svg" alt="Discord" width={25} height={25} /></Link>
+        </div>
+        <div className="flex font-[Nippo-Variable]">
+©HackTU 7.0 2026 ALL RIGHTS RESERVED | Designed With ❤️ by
+        </div>
+      </div>
+    </footer>
+  )
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
-      <Navbar items={[
-        navbarItem("Register", "https://example.com"),
-        navbarItem("Sponsors", "https://example.com"),
-        navbarItem("FAQs", "https://example.com"),
-        navbarItem("Contact", "https://example.com"),
-      ]} />
+      <Navbar items={NAVBAR} />
       <Hero />
       <div className="h-32"></div>
       <AboutUs />
@@ -186,6 +247,11 @@ export default function Home() {
       <div className="h-32"></div>
       <Timeline />
       <div className="h-32"></div>
+      <Sponsor />
+      <div className="h-32"></div>
+      <FAQs />
+      <div className="h-32"></div>
+      <Footer />
     </div>
   );
 }
