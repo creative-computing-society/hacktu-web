@@ -13,16 +13,17 @@ export default function Hero() {
   const { isPassed: startPassed, ...startCountDown} = useCountdown(HACKATHON_DATE);
   const isHackathonOver = (new Date(HACKATHON_END_DATE).getTime() - new Date().getTime()) < 0;
   const hideImage = useWidthCutoff(1500);
-  const showMLHOfficialTag = useWidthCutoff(1000);
+  const showMLHOfficialTag = useWidthCutoff(1001);
+  const verySmall = useWidthCutoff(484);
   return (
-    <div className="w-[100vw] flex items-center justify-between">
+    <div className="w-[100vw] h-[100vh] flex items-center justify-between">
       {hideImage || (
         <Image src="/earth_graphic.webp" alt="Hero image" width={800} height={600} />
       )}
       <div className={cn("flex flex-col items-center gap-8", hideImage ? "w-screen justify-between mt-[25vh]" : "mr-[10vw]")}>
         <div className="flex flex-col text-center gap-4">
           <div>
-            <div className="text-9xl font-black font-[Nippo-Variable]">HackTU {HACKATHON_VERSION}.0</div>
+            <div className={cn("font-black font-[Nippo-Variable]", verySmall ? "text-8xl" : "text-9xl")}>HackTU {HACKATHON_VERSION}.0</div>
             { showMLHOfficialTag && <div className="text-md font-normal font-[Nippo-Variable]">MLH Official Hackathon</div> }
           </div>
           <div className="text-2xl font-medium font-[Nippo-Variable]">{HACKATHON_DATE_FMT}</div>

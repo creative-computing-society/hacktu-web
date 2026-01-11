@@ -9,9 +9,10 @@ const SHADOWCOLOR = ["red", "yellow", "green", "blue", "purple"]
 export default function Tracks() {
   const smallerFont = useWidthCutoff(582);
   const switchToSingleColumn = useWidthCutoff(1144);
+  const verySmall = useWidthCutoff(484);
   return (
     <div className="flex flex-col items-center">
-      <div className="text-8xl font-[Nippo-Variable] mb-16">Tracks</div>
+      <div className={cn("font-[Nippo-Variable] mb-16", verySmall ? "text-6xl" : "text-8xl")}>Tracks</div>
       <div className={cn("grid gap-4 w-[80vw] justify-evenly text-center", switchToSingleColumn ? "grid-cols-1" : "grid-cols-2")}>
         {TRACKS.map((track, i) => (
           <Card key={`track-${i}`} className={cn("p-4 flex flex-col h-auto justify-evenly", SHADOWCOLOR[i % SHADOWCOLOR.length] + "shadow")}>

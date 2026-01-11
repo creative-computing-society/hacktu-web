@@ -1,7 +1,7 @@
 "use client"
 
-import { useRef, useState } from "react";
-import { TimelineItem, TIMELINE } from "@/app/config"
+import { useState } from "react";
+import { TIMELINE } from "@/app/config"
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -11,9 +11,10 @@ const SHADOWCOLOR = ["red", "yellow", "green", "blue", "purple"]
 export default function Timeline() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const switchToSingleColumn = useWidthCutoff(700);
+  const verySmall = useWidthCutoff(484);
   return (
     <div className="flex flex-col items-center gap-4">
-      <div className="text-8xl font-[Nippo-Variable] mb-16">Timeline</div>
+      <div className={cn("font-[Nippo-Variable] mb-16", verySmall ? "text-6xl" : "text-8xl")}>Timeline</div>
       <div className={cn("grid items-center gap-4", switchToSingleColumn ? "grid-cols-1" : "grid-cols-2")}>
       {TIMELINE.map((item, i) => (
         <Button key={`timeline-item-${i}`} className={cn("bg-main h-full", SHADOWCOLOR[i % SHADOWCOLOR.length] + "shadow")} onClick={() => {
@@ -24,14 +25,14 @@ export default function Timeline() {
             inline: 'end'
           })
         }}>
-          <div className="flex flex-col w-[40vw] whitespace-normal gap-4 p-4">
+          <div className={cn("flex flex-col whitespace-normal gap-4 p-4", verySmall ? "w-[80vw]" : "w-[40vw]")}>
             <div className={cn("font-[Nippo-Variable]", switchToSingleColumn ? "text-2xl" : "text-4xl")}>{item.title}</div>
             <div className="text-xl">{item.description}</div>
           </div>
         </Button>
       ))}
       </div>
-      <div className="flex flex-col w-[100vw] justify-evenly items-center">
+      <div className={cn("flex flex-col justify-evenly items-center", verySmall ? "w-[80vw]" : "w-[60vw]")}>
       <div id="timeline-calendar" className="translate-y-[-25vw]"></div>
         <Calendar
           className="bg-offwhite p-8 rounded-xl"

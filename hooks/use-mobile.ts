@@ -10,10 +10,10 @@ export function useWidthCutoff(breakpoint: number) {
   React.useEffect(() => {
     const mql = window.matchMedia(`(max-width: ${breakpoint - 1}px)`)
     const onChange = () => {
-      setIsMobile(window.innerWidth < breakpoint)
+      setIsMobile(document.documentElement.clientWidth < breakpoint)
     }
     mql.addEventListener("change", onChange)
-    setIsMobile(window.innerWidth < breakpoint)
+    setIsMobile(document.documentElement.clientWidth < breakpoint)
     return () => mql.removeEventListener("change", onChange)
   }, [])
 

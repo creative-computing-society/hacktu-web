@@ -7,9 +7,10 @@ import Image from "next/image";
 
 export default function AboutUs() {
   const hideImage = useWidthCutoff(1000);
+  const verySmall = useWidthCutoff(484);
   return (
     <div className="flex flex-col items-center">
-      <div className="text-8xl font-[Nippo-Variable] mb-16">About us</div>
+      <div className={cn("font-[Nippo-Variable] mb-16", verySmall ? "text-6xl" : "text-8xl")}>About us</div>
       <div className="flex w-[100vw] justify-evenly items-center">
         <div className={cn("text-3xl", hideImage ? "text-center" : "ml-8")}>
           <span className="text-main font-bold">Creative Computing Society</span> is back with <span className="text-main font-bold">HackTU {HACKATHON_VERSION}.0</span>, our flagship event
