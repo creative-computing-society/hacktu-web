@@ -48,7 +48,7 @@ export default function Hero() {
           )
         ) : (
         <>
-          <ApplyWithDevfolio smaller={hideImage} />
+          <ApplyWithDevfolio />
           <div className="flex flex-col text-center">
             <div className="text-3xl">Registeration Deadline</div>
             <Countdown {...countdown} />
