@@ -85,10 +85,11 @@
 }
 
 :root {
-    --offwhite: #f2f0ef
+    --offwhite: #f2f0ef;
     --secondary-background: oklch(100% 0 0);
     --main-foreground: oklch(0% 0 0);
     --main: oklch(87.47% 0.1726 259.49);
+    --maindark: oklch(67.47% 0.1726 259.49);
     --border: oklch(0.222 0 0);
     --borderblack: var(--main-foreground);
     --ring: oklch(0.708 0 0);

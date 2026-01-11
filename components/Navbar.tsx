@@ -18,7 +18,7 @@ export default function Navbar({ items }: {
     <NavigationMenu viewport={useIsMobile()} className="z-5 h-24 fixed bg-white p-4 border-black">
     {hideCCSLogo || (
       <NavigationMenuList className="w-[50vw] justify-start pl-4">
-        <div className="bg-main p-2 rounded-4xl">
+        <div className="bg-[var(--maindark)] p-2 rounded-4xl">
           <Image src="/ccs_logo_white.png" alt="CCS Logo" width={40} height={40} />
         </div>
       </NavigationMenuList>
