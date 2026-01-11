@@ -12,14 +12,17 @@ export default function Navbar({ items }: {
   }[]
 }) {
   const hideBanner = useWidthCutoff(1000);
+  const hideCCSLogo = useWidthCutoff(500);
   return (
     <NavigationMenu viewport={useIsMobile()} className="z-5 h-24 fixed bg-white p-4 border-black">
-    <NavigationMenuList className="w-[50vw] justify-start pl-4">
-    <div className="bg-main p-2 rounded-4xl">
-      <Image src="/ccs_logo_white.png" alt="CCS Logo" width={40} height={40} />
-    </div>
-    </NavigationMenuList>
-    <NavigationMenuList className="w-[50vw] justify-end pr-4">
+    {hideCCSLogo || (
+      <NavigationMenuList className="w-[50vw] justify-start pl-4">
+        <div className="bg-main p-2 rounded-4xl">
+          <Image src="/ccs_logo_white.png" alt="CCS Logo" width={40} height={40} />
+        </div>
+      </NavigationMenuList>
+    )}
+    <NavigationMenuList className={cn(hideCCSLogo ? "w-[100vw]" : "w-[50vw] pr-4 justify-end")}>
       {items.map(({ name, link }) => (
         <NavigationMenuItem key={`navbar-item-${name}`}>
           <NavigationMenuLink href={link} className={cn(navigationMenuTriggerStyle(), "bg-transparent text-xl")}>

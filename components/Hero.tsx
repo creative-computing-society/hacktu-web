@@ -19,7 +19,7 @@ export default function Hero() {
       {hideImage || (
         <Image src="/earth_graphic.webp" alt="Hero image" width={800} height={600} />
       )}
-      <div className={cn("flex flex-col items-center gap-8", hideImage ? "w-screen justify-between mt-[10vw]" : "mr-[10vw]")}>
+      <div className={cn("flex flex-col items-center gap-8", hideImage ? "w-screen justify-between mt-[25vh]" : "mr-[10vw]")}>
         <div className="flex flex-col text-center gap-4">
           <div>
             <div className="text-9xl font-black font-[Nippo-Variable]">HackTU {HACKATHON_VERSION}.0</div>
