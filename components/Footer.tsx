@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils";
 export default function Footer() {
   const smallerFont = useWidthCutoff(737);
   return (
-    <footer id="footer" className={cn("bg-main rounded-t-[100%] flex items-center justify-center", smallerFont ? "text-[3vw] h-[30vh]" : "text-2xl h-[60vh]")}>
-      <div className={cn("flex flex-col gap-4 w-screen items-center mb-[10vh]", smallerFont ? "mt-[10vh]" : "mt-[30vh]")}>
+    <footer id="footer" className={cn("bg-main flex items-center justify-center pt-16 pb-16", smallerFont ? "text-[3vw]" : "text-2xl")}>
+      <div className={cn("flex flex-col gap-4 w-screen items-center")}>
         <div className={cn("flex gap-4 font-[Nippo-Variable]", smallerFont ? "flex-col text-center" : "")}>
           <Link href={FOOTER_LINKS.about}>About CCS</Link>
           <Link href={FOOTER_LINKS.privacy}>Privacy Policy</Link>
@@ -26,7 +26,7 @@ export default function Footer() {
           <Link href={SOCIALS.discord}><Image src="/discord.svg" alt="Discord" width={25} height={25} /></Link>
         </div>
         <div className="flex font-[Nippo-Variable]">
-©HackTU {HACKATHON_VERSION}.0 {new Date(HACKATHON_DATE).getFullYear()} ALL RIGHTS RESERVED | Designed With ❤️ by
+©HackTU {HACKATHON_VERSION}.0 {new Date(HACKATHON_DATE).getFullYear()} ALL RIGHTS RESERVED | Designed With ❤️ by CCS
         </div>
       </div>
     </footer>
