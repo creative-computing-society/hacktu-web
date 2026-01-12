@@ -60,7 +60,7 @@ export const SPONSORS = [
   s("/sponsors/genesis.webp", "https://instagram.com/zk_genesis/", "Genesis"),
 ] as { image_link: string; link: string; name: string }[];
 export const SPONSOR_PACKET = "https://drive.google.com/file/d/1yw9vDo41PjE309vj6tjFnPKELxVcyM_o/view?usp=sharing";
-
+// forcing a commit
 export type Track = {
   name: string;
   description: string;
