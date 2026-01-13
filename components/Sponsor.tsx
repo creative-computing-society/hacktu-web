@@ -14,7 +14,7 @@ export default function Sponsor() {
   return (
     <div id="sponsor" className="flex flex-col items-center">
       <div className={cn("font-[Nippo-Variable] mb-16", verySmall ? "text-6xl" : "text-8xl")}>Sponsor</div>
-      <div className="flex flex-col w-[100vw] gap-15 justify-evenly items-center text-center p-8">
+      <div className={cn("flex flex-col w-[100vw] gap-15 justify-evenly items-center text-center", verySmall ? "p-2" : "p-8")}>
       <div className="grid grid-cols-2 gap-4">
         {SPONSORS.map(({ image_link, link, name }, i) => (
           <Card key={`sponsor-${name}`} className={cn("flex items-center justify-center p-8", SHADOWCOLOR[i % SHADOWCOLOR.length] + "shadow")}>

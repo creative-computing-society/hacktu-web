@@ -9,6 +9,7 @@ import Timeline from "@/components/Timeline";
 import Sponsor from "@/components/Sponsor";
 import FAQs from "@/components/FAQs";
 import Footer from "@/components/Footer";
+import ReachPatiala from "@/components/ReachPatiala";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Tracks />
       <div className="h-32"></div>
       <Timeline />
+      <ReachPatiala />
       <div className="h-32"></div>
       <Sponsor />
       <div className="h-32"></div>

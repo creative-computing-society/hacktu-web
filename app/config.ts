@@ -38,6 +38,7 @@ export const FAQ = [
   f("I've already applied but my application status is still pending", "Be patient, we've got so many registrations, we are still in the process of accepting teams, just hold on for some time."),
   f("Can I use a project that was previously bult for a hackathon", "No, you cannot use a project that was previously built. All hackathon projects must be created from scratch during the event's timeline to ensure fairness and creativity. Additionally, all participants must comply with the MLH Code of Conduct to maintain a positive and inclusive environment."),
   f("What if I feel sleepy during the Hackathon?", "We will try our best to have engaging activities at every hour but just incase you lose it all, we'll have you covered with special resting zones. Otherwise feel free to have a quick nap at your desk"),
+  f("I got selected!, what do I have to bring?", "Check-in timing is strictly 9:30 AM to 10:45 AM. Bring your valid ID cards (e.g. Aadhar Card, College ID card), it is essential for entering the venue"),
   f("Curious about something else", "Contact us at: +91 7388878724 +91 7821800212 support@ccstiet.com")
 ] as { question: string, answer: string }[]
 export const FOOTER_LINKS = {
@@ -51,7 +52,7 @@ export const SOCIALS = {
   instagram: "https://www.instagram.com/ccs_tiet/",
   linkedin: "https://www.linkedin.com/company/ccs-tiet/posts/_feedView=all",
   whatsapp: "https://chat.whatsapp.com/D4SQJXJDdPr7KD2tcPUAZx",
-  discord: "https://discord.gg/QXQrZ56BcW",
+  discord: "http://url.ccstiet.com/discord",
 } as const;
 export const SPONSORS = [
   s("/sponsors/devfolio.svg", "https://devfolio.co/", "Devfolio"),

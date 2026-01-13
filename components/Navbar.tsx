@@ -4,6 +4,7 @@ import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuL
 import { useIsMobile, useWidthCutoff } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function Navbar({ items }: {
   items: {
@@ -11,6 +12,21 @@ export default function Navbar({ items }: {
     link: string
   }[]
 }) {
+  useEffect(() => {
+    // https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link
+    // Source - https://stackoverflow.com/a
+    // Posted by Joseph Silber, modified by community. See post 'Timeline' for change history
+    // Retrieved 2026-01-13, License - CC BY-SA 3.0
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+  }, [])
   const hideBanner = useWidthCutoff(1000);
   const hideCCSLogo = useWidthCutoff(500);
   const verySmall = useWidthCutoff(484);
