@@ -7,11 +7,11 @@ export default function Home() {
     <div className="flex flex-col items-center bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px]">
       <div className="w-screen flex flex-col gap-2 justify-center p-2">
 <Link href="/" className="self-center">
-  <Button className="w-[90vw] text-lg">Go back</Button>
+  <Button className="w-[90vw] text-lg font-[Nippo-Variable]">Go back</Button>
 </Link>
 <div className="text-md text-center">Numbers might slightly vary depending upon the time and date</div>
 <Card className="p-2">
-<div className="text-2xl">By Train</div>
+<div className="text-2xl font-bold">By Train</div>
 <div className="text-lg">
 The nearest railway station is Patiala Junction
 From Major Railway Stations:
@@ -39,9 +39,9 @@ From Patiala Junction to Thapar:
 Take an auto/rickshaw (₹50-100). The campus is just 5.7 km away from the railway
 station.
 </div>
-<div className="text-2xl">
-By Road
-</div>
+</Card>
+<Card className="p-2">
+<div className="text-2xl font-bold">By Road</div>
 Patiala is connected by road with major cities like Delhi, Chandigarh, and Amritsar.
 Frequent buses (Punjab Roadways and private operators) connect Patiala with major cities in
 North India. Below are the details for convenient travel to Patiala:
@@ -78,9 +78,9 @@ local autorickshaw (₹50 per person in sharing or ₹200 if traveling alone) (c
 you pre-book an auto or after mid-night)
   </li>
 </ul>
-<div className="text-2xl">
-By Air
-</div>
+</Card>
+<Card className="p-2">
+<div className="text-2xl font-bold">By Air</div>
 The nearest airport to the venue is Chandigarh International Airport.
 <ul className="pl-8" style={{
   listStyleType: 'initial'
