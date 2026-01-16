@@ -11,11 +11,12 @@ import { Card } from "./ui/card";
 const SHADOWCOLOR = ["red", "yellow", "green", "blue", "purple"]
 export default function Sponsor() {
   const verySmall = useWidthCutoff(484);
+  const twoColumns = useWidthCutoff(632);
   return (
     <div id="sponsor" className="flex flex-col items-center">
       <div className={cn("font-[Nippo-Variable] mb-16", verySmall ? "text-6xl" : "text-8xl")}>Sponsor</div>
       <div className={cn("flex flex-col w-[100vw] gap-15 justify-evenly items-center text-center", verySmall ? "p-2" : "p-8")}>
-      <div className="grid grid-cols-3 gap-4">
+      <div className={cn("grid gap-4", twoColumns ? "grid-cols-1" : "grid-cols-3")}>
         {SPONSORS.map(({ image_link, link, name }, i) => (
           <Card key={`sponsor-${name}`} className={cn("flex items-center justify-center p-8", SHADOWCOLOR[i % SHADOWCOLOR.length] + "shadow")}>
             <Link href={link}>
