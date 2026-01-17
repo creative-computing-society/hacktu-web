@@ -30,7 +30,7 @@ export default function DilathonSponsoredTracks({
             <div className="flex flex-col gap-2 text-start">
               <div className="font-bold text-lg">Problem</div>
               <div className="text-lg text-[#fb542b]">{track.problem}</div>
-              <div className="font-bold text-lg">Solution</div>
+              <div className="font-bold text-lg">Challenge</div>
               <div className="text-lg text-[#68b8ff]">{track.challenge}</div>
               <div className="font-bold text-lg">Requirements</div>
               <div className="flex flex-col ml-4">
