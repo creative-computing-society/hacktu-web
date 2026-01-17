@@ -41,7 +41,7 @@ export default function DilathonSponsoredTracks({
             </div>
           </Card>
         ))}
-        <Card className={cn("p-4 bg-black text-white flex flex-col h-auto justify-evenly", SHADOWCOLOR[(DILATHON_SPONSORED_TRACKS.length) % SHADOWCOLOR.length] + "shadow")}>
+        <Card className={cn("p-4 bg-[#111100] text-white flex flex-col h-auto justify-evenly", SHADOWCOLOR[(DILATHON_SPONSORED_TRACKS.length) % SHADOWCOLOR.length] + "shadow")}>
           <CardTitle>
             <div className={cn("font-[Nippo-Variable]", smallerFont ? "text-xl" : "text-4xl")}>OPEN DEFENCE INNOVATION</div>
           </CardTitle>
