@@ -4,7 +4,6 @@ import { DILATHON_SPONSORED_TRACKS, TRACKS } from "@/app/config"
 import { Card, CardTitle } from "./ui/card";
 import { cn } from "@/lib/utils";
 import { useWidthCutoff } from "@/hooks/use-mobile";
-import DilathonSponsoredTracks from "./DilathonSponsoredTracks";
 
 const SHADOWCOLOR = ["red", "yellow", "green", "blue", "purple"]
 export default function Tracks() {
@@ -15,15 +14,6 @@ export default function Tracks() {
     <div id="tracks" className="flex flex-col items-center">
       <div className={cn("font-[Nippo-Variable] mb-16", verySmall ? "text-6xl" : "text-8xl")}>Tracks</div>
       <div className={cn("grid gap-4 w-[80vw] justify-evenly text-center", switchToSingleColumn ? "grid-cols-1" : "grid-cols-2")}>
-        {TRACKS.map((track, i) => (
-          <Card key={`track-${i}`} className={cn("p-4 flex flex-col h-auto justify-evenly", SHADOWCOLOR[i % SHADOWCOLOR.length] + "shadow")}>
-            <CardTitle>
-              <div className={cn("font-[Nippo-Variable]", smallerFont ? "text-2xl" : "text-6xl")}>{track.name}</div>
-              <div className="text-lg">{track.sdg}</div>
-            </CardTitle>
-            <div className="text-md">{track.description}</div>
-          </Card>
-        ))}
         {DILATHON_SPONSORED_TRACKS.map((track, i) => (
           <Card key={`dilathon-track-${i}`} className={cn("p-4 flex flex-col h-auto justify-evenly", SHADOWCOLOR[i % SHADOWCOLOR.length] + "shadow")}>
             <CardTitle>
@@ -56,6 +46,15 @@ Autonomous package delivery (ISR)
 Your wildest idea...
           </div>
         </Card>
+        {TRACKS.map((track, i) => (
+          <Card key={`track-${i}`} className={cn("p-4 flex flex-col h-auto justify-evenly", SHADOWCOLOR[i % SHADOWCOLOR.length] + "shadow")}>
+            <CardTitle>
+              <div className={cn("font-[Nippo-Variable]", smallerFont ? "text-2xl" : "text-6xl")}>{track.name}</div>
+              <div className="text-lg">{track.sdg}</div>
+            </CardTitle>
+            <div className="text-md">{track.description}</div>
+          </Card>
+        ))}
       </div>
     </div>
   )
