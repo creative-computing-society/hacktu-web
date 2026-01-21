@@ -79,7 +79,7 @@ export const FOOTER_LINKS = {
   termsandconditions: "https://github.com/MLH/mlh-policies/blob/main/contest-terms.md",
 } as const;
 export const SOCIALS = {
-  mail: "mailto:ccstiet@thapar.edu",
+  mail: "mailto:ccs@thapar.edu",
   instagram: "https://www.instagram.com/ccs_tiet/",
   linkedin: "https://www.linkedin.com/company/ccs-tiet/posts/_feedView=all",
   whatsapp: "https://chat.whatsapp.com/D4SQJXJDdPr7KD2tcPUAZx",
